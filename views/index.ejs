@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- GSAP CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+  <!-- To-Do List Container -->
+  <div id="todo-container" class=" shadow-md rounded-lg w-full max-w-md p-6">
+
+    <!-- Header -->
+     <div class="bg-white shadow-md rounded-lg w-full max-w-md p-3 mb-3">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">My To-Do List</h1>
+
+    <!-- Input and Add Button -->
+    <div class="flex items-center mb-4">
+
+      <input 
+        type="text" 
+        id="newtodoinput" 
+        placeholder="Add a new task..." 
+        class="flex-1 px-4 py-2 border rounded-l-lg outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+
+     
+      <button 
+        id="addtodobutton" 
+
+        class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-r-lg font-semibold transition">
+        Add
+      </button>
+</div>
+    <!-- </a> -->
+    </div>
+
+
+<div class="  ">
+
+<% todolist.slice().reverse().forEach((todo)=>{ %>
+<div class="max-w-sm   p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-h-24  overflow-hidden text-ellipsis  " > <%= todo.desc %></p>
+  <span>  <%= todo.date %> </span>
+  <a href="/home/read/<%= todo.id %>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Read more
+      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+  </a>
+</div>
+<% }) %>
+</div>
+<!-- <button id="" >edit</button> -->
+      <!-- </li> -->
+         <!-- Edit Button with Icon -->
+    <!-- <button  class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none">
+        <i class="fas fa-edit mr-2"></i> 
+        Edit
+    </button> -->
+<!-- <li>{%todocontent%}</li> -->
+
+
+
+  
+
+  </div>
+
+  <!-- Optional GSAP Script Placeholder (to animate items) -->
+  <script src="/static/script.js">
+ 
+
+    // Placeholder for future GSAP animations
+    // Example: gsap.from("#todo-container", { duration: 1, y: -50, opacity: 0 });
+  </script>
+</body>
+</html>

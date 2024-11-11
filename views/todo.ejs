@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="flex justify-center min-h-screen items-center bg-black">
+    <% if(display) { %>
+    <div class="w-64 min-h-64 p-6 flex flex-col justify-between bg-white border border-gray-200 rounded-lg">
+        <!-- Description Text -->
+        <div>
+            <p 
+                id="edittext" 
+                onclick="convertToInput(id, '<%= display.id %>')" 
+                class="mb-3 font-normal text-gray-700 break-words overflow-hidden"
+            >
+                <%= display.desc %>
+            </p>
+        </div>
+        <!-- Delete Button and Edit Icon -->
+        <div class="flex justify-between items-center">
+            <button 
+                id="delete" 
+                class="text-red-500 hover:text-red-600 font-semibold transition" 
+                onclick="deletetodo('<%= display.id %>')"
+            > 
+                Delete
+            </button>
+            <i id="edit" class="fas fa-edit text-gray-700 hover:text-gray-800 cursor-pointer"></i>
+        </div>
+    </div>
+    <% } %>
+    <script src="/static/script.js"></script>
+</body>
+</html>
